@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle-Switch</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .box{
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-30%,-30%);
+        }
+        .box label{
+            position: relative;
+            width: 100px;
+            height: 50px; 
+            border-radius: 30px;
+            display: block;
+            background-color:gray;
+        }   
+            
+        .box label::before{
+            position: absolute;
+            content: "";
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            background-color: white;
+            transition: all 400ms linear;
+        } 
+        #btn:checked + label{
+            background-color:rgba(0, 102, 255, 0.938);
+            
+        }
+        #btn:checked + label::before{
+            left: 55px;
+            background-color: rgba(245, 245, 245, 0.849);
+        }
+        #btn{
+            position: absolute;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" id="btn">
+        <label for="btn"></label>
+    </div>
+</body>
+</html>
